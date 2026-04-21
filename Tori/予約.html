@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/style.css">
+
+    <title>ご予約</title>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <nav class="navbar navbar-expand-sm navbar-dark main-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/Foto/logo.png" class="logo">
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">お知らせ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">店舗紹介</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">アクセス</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">ご予約</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- ===== MAIN ===== -->
+<main>
+
+<!-- HERO -->
+<section class="container text-center py-5">
+    <h1 class="fw-bold mb-3">ご予約</h1>
+    <p class="text-muted">フォームから簡単にご予約いただけます。</p>
+</section>
+
+<!-- FORM -->
+<section class="container pb-5" style="max-width: 500px;">
+
+    <form id="reservationForm">
+
+        <!-- NAME -->
+        <div class="mb-3">
+            <label class="form-label">お名前</label>
+            <input type="text" id="name" class="form-control" placeholder="山田 太郎">
+        </div>
+
+        <!-- PEOPLE -->
+        <div class="mb-3">
+            <label class="form-label">人数</label>
+            <input type="number" id="people" class="form-control" placeholder="2">
+        </div>
+
+        <!-- DATE -->
+        <div class="mb-3">
+            <label class="form-label">日付</label>
+            <input type="date" id="date" class="form-control">
+        </div>
+
+        <!-- BUTTON -->
+        <button type="submit" class="btn btn-dark w-100">
+            予約する
+        </button>
+
+    </form>
+
+    <!-- RESULT MESSAGE -->
+    <div id="result" class="mt-4 text-center fw-bold"></div>
+
+</section>
+
+</main>
+
+<!-- JS -->
+<script>
+document.getElementById("reservationForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const people = document.getElementById("people").value;
+    const date = document.getElementById("date").value;
+
+    const result = document.getElementById("result");
+
+    // validation
+    if (!name || !people || !date) {
+        result.style.color = "red";
+        result.innerText = "すべて入力してください";
+        return;
+    }
+
+    if (people <= 0) {
+        result.style.color = "red";
+        result.innerText = "正しい人数を入力してください";
+        return;
+    }
+
+    // success
+    result.style.color = "green";
+    result.innerText = `${name}様、${people}名様のご予約を受け付けました（${date}）`;
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

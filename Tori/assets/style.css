@@ -1,0 +1,115 @@
+/* ===== NAVBAR ===== */
+.main-navbar {
+    background-color: #231a15;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.nav-link {
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+/* ===== CAROUSEL ===== */
+.carousel {
+    margin-bottom: 0;
+}
+.carousel-inner {
+    height: 60vh;
+}
+
+@media (max-width: 768px) {
+    .carousel-inner {
+        height: 20vh;
+    }
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* Memberikan jarak antar huruf agar terkesan mewah */
+.ls-3 {
+    letter-spacing: 3px;
+}
+
+.hero-text-area {
+    background: linear-gradient(to bottom, transparent, #fafafa); /* Efek gradient halus di background */
+}
+
+.hero-text {
+    max-width: 700px;
+}
+/* Dekorasi garis di bawah judul */
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background-color: #231a15;
+}
+
+/* Dekorasi garis di bagian bawah (divider) */
+.custom-line {
+    width: 60px;
+    height: 1px;
+    background-color: #231a15;
+    opacity: 0.5;
+}
+
+/* Animasi agar teks tidak muncul kaku */
+.hero-text-area {
+    animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-text-area {
+    background: linear-gradient(to bottom, transparent, #a1948d); /* Efek gradient halus di background */
+        animation: InUp 1.2s ease-out;
+}
+
+@keyframes InUp {
+    from {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card{
+    overflow: hidden;
+    border-radius: 6px;
+    position: relative;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+    object-fit: cover;
+}
+
