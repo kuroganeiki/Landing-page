@@ -113,3 +113,25 @@
     object-fit: cover;
 }
 
+
+/* ===== EVENT SECTION ===== */
+
+#event {
+    background-color: #f9f9f9; /* opsional biar beda section */
+}
+
+/* Title */
+.event-title {
+    font-weight: bold;
+}
+
+/* Image */
+.event-image img {
+    max-width: 500px;
+}
+
+/* Description */
+.event-description {
+    max-width: 700px;
+    line-height: 1.8;
+}
